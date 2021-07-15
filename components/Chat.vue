@@ -1,12 +1,20 @@
 <template>
     <div>
-        <div class="pt-4 pb-28 space-y-8 overflow-auto ">
-            <div class="space-y-8" v-for="(data, idx) in messages" :key="idx">
-                <Message :author="data.username" :message="data.message" :botOrigin="data.serverOrigin" />
+        <div class="pt-4 pb-28 space-y-8">
+            <div class="fixed h-5/6 w-full">
+                <ul v-chat-scroll class="space-y-8 overflow-auto max-h-full" >
+                    <li v-for="(data, idx) in messages" :key="idx">
+                        <Message :author="data.username" :message="data.message" :botOrigin="data.serverOrigin" />
+                    </li>
+                </ul>
             </div>
+            
+            
+
+
             <div class="fixed bottom-0 left-0">
                 <form @submit.prevent="submit" class="flex mx-4 space-x-4">
-                    <input v-on:change="changeInput" v-model="message" class="bg-gray-900 py-3 text-white text-xl px-4 w-full my-4  rounded-2xl w-full">
+                    <input v-on:change="changeInput" v-model="message" class="bg-gray-900 py-3 text-white text-xl px-4 w-full my-4  rounded-2xl">
                     <button @click.prevent="submit" class="text-4xl">
                         🧠
                     </button>
