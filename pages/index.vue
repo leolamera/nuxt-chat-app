@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Chat/>
+    <ChatApp/>
   </div>
 
 </template>

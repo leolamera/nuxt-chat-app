@@ -1,7 +1,7 @@
 <template>
     <div :class="container">
         <h2 :class="username">{{author}}</h2>
-        <h1 class="text-xl w-full">{{message}}</h1>
+        <h1 class="text-xl w-full whitespace-pre-line">{{message}}</h1>
         <h4 :class="time">16:20</h4>
     </div>
 </template>

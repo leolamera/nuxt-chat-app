@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="pt-4 pb-28 space-y-8">
-            <div class="fixed h-5/6 w-full">
+        <div class="flex justify-end pt-4 pb-28 space-y-8">
+            <div class="fixed h-5/6 w-full md:max-w-4xl">
                 <ul v-chat-scroll class="space-y-8 overflow-auto max-h-full" >
                     <li v-for="(data, idx) in messages" :key="idx">
                         <Message :author="data.username" :message="data.message" :botOrigin="data.serverOrigin" />
@@ -12,12 +12,14 @@
             
 
 
-            <div class="fixed bottom-0 left-0">
-                <form @submit.prevent="submit" class="flex mx-4 space-x-4">
-                    <input v-on:change="changeInput" v-model="message" class="bg-gray-900 py-3 text-white text-xl px-4 w-full my-4  rounded-2xl">
-                    <button @click.prevent="submit" class="text-4xl">
-                        🧠
-                    </button>
+            <div class="md:flex md:justify-end md:w-full fixed bottom-0 left-0">
+                <form @submit.prevent="submit" class="md:bg-blue-100 px-4 md:px-20 md:w-5/12">
+                    <div class="flex max-h-full space-x-4 justify-between">
+                        <input v-on:change="changeInput" v-model="message" class="bg-gray-900 py-3 text-white text-xl px-4 w-full my-4  rounded-2xl">
+                        <button @click.prevent="submit" class="text-4xl">
+                            🧠
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
