@@ -77,7 +77,7 @@ export default {
             this.messages.push(data)
             await axios({
                 method: "POST",
-                url: 'http://localhost:8000/',
+                url: 'https://chatbot-python.us-south.cf.appdomain.cloud/',
                 data: data,
                 headers: {"Access-Control-Allow-Origin":"*"}
             })
